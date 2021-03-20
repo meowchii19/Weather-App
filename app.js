@@ -8,7 +8,7 @@ const search = document.querySelector('[data-search]')
 const container = document.querySelector('.container')
 search.addEventListener('keypress', searchQuery)
 
-//if presses enter
+//if presses enter 
 function searchQuery(e) {
   if(e.keyCode == 13)
   getResult(search.value)
