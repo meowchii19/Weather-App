@@ -6,12 +6,30 @@
 
 body{
     font-family:  'Poppins';
-    background-image: url(./bg/photo-1516912481808-3406841bd33c.webp);
-    background-size: cover;
-    background-position: top center;
     color: white;
 }
 
+.__weather.clouds {
+    background-image: url(./bg/cloudy.webp);
+    background-position: top center;
+    background-size: cover;
+
+}
+
+.__weather.clear{
+    background-image: url(./bg/clear.webp);
+    background-position: center;
+    background-size: cover;
+    max-height: 100vh;
+   
+}
+
+.__weather.rain{
+    background-image: url(./bg/rain.webp);
+    background-position: top center;
+    background-size: cover;
+   
+}
 
 .container {
     display: flex;

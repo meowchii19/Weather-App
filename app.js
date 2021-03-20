@@ -1,11 +1,8 @@
 
 //getting the api
-const api = {
-  key : '6288011b1f1544e380325c2e1cda0dbe',
-  base : 'http://api.openweathermap.org/data/2.5/'
-  
-}
 
+const api_key = '6288011b1f1544e380325c2e1cda0dbe'
+const base = 'http://api.openweathermap.org/data/2.5/'
 
 const search = document.querySelector('[data-search]')
 const container = document.querySelector('.container')
@@ -18,16 +15,14 @@ function searchQuery(e) {
 }
 
 
-
 // getting the search query from search bar
 function getResult(query) {
 
-  fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+  fetch(`${base}weather?q=${query}&units=metric&APPID=${api_key}`)
     .then(weather => {
       return weather.json()
     }).then(displayResults)
   search.value = ''
-  console.log()
 }
 
 
@@ -42,7 +37,6 @@ function displayResults(weather) {
   let date = new Date()
   createElement(temp, currentWeather, city, country)
 }
-
 
 
 //creating elements to DOM
@@ -70,7 +64,8 @@ function createElement(temp, currentWeather, cityName, countryName) {
     tempDiv.innerHTML = `${wholeNum} <span></span>&#176;c`
 
     const weather = document.createElement('div')
-    weather.classList.add('weather')
+    weather.classList.add
+    weather.classList.add(currentWeather)
     weather.innerHTML = `${currentWeather}`
 
     section.appendChild(city)
@@ -78,8 +73,39 @@ function createElement(temp, currentWeather, cityName, countryName) {
     content.appendChild(section)    
     content.appendChild(tempDiv)
     content.appendChild(weather)
+
+    bgChanger(currentWeather)
 }
 
+const weather  = document.querySelector('.__weather')
+weather.classList.add('clouds')
+
+// changes bg based on weather
+function bgChanger(currentWeather) {
+
+
+  if(currentWeather === 'Clouds')  {
+    weather.classList.remove('rain')
+    weather.classList.remove('clear')
+    weather.classList.add('clouds')
+    console.log('clouds')
+
+  }
+
+  else if(currentWeather === 'Rain') {
+    weather.classList.remove('sunny')
+    weather.classList.remove('clouds')
+    weather.classList.add('rain')
+    console.log('rain')
+  }
+  else {    
+    weather.classList.remove('clouds')
+    weather.classList.remove('rain')
+    weather.classList.add('clear')
+    console.log('clear')
+
+  }
+}
 
 //getting date today
 function getDate () {
@@ -123,8 +149,6 @@ function getDate () {
 
   return `${day} ${date} ${month} ${year}`
 }
-
-
 
 
 
