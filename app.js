@@ -88,7 +88,6 @@ function bgChanger(currentWeather) {
     weather.classList.remove('rain')
     weather.classList.remove('clear')
     weather.classList.add('clouds')
-    console.log('clouds')
 
   }
 
@@ -96,13 +95,11 @@ function bgChanger(currentWeather) {
     weather.classList.remove('sunny')
     weather.classList.remove('clouds')
     weather.classList.add('rain')
-    console.log('rain')
   }
   else {    
     weather.classList.remove('clouds')
     weather.classList.remove('rain')
     weather.classList.add('clear')
-    console.log('clear')
 
   }
 }
