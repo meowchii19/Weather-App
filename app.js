@@ -18,7 +18,7 @@ function searchQuery(e) {
 // getting the search query from search bar
 function getResult(query) {
 
-  fetch(`${base}weather?q=${query}&units=metric&APPID=${api_key}`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&APPID=${api_key}`)
     .then(weather => {
       return weather.json()
     }).then(displayResults)
