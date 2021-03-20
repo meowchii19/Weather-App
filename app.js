@@ -2,7 +2,7 @@
 //getting the api
 
 const api_key = '6288011b1f1544e380325c2e1cda0dbe'
-const base = 'http://api.openweathermap.org/data/2.5/'
+const base = 'https://api.openweathermap.org/data/2.5/'
 
 const search = document.querySelector('[data-search]')
 const container = document.querySelector('.container')
